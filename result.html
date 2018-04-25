@@ -1,0 +1,66 @@
+
+<?php
+    $db = mysqli_connect('localhost','root','','avion');
+?>
+
+<html>
+<body>
+
+
+
+<table style="width:100%">
+  <tr>
+    <th>NAME</th>
+    <th>PRICE</th> 
+    <th>TIME OF DEPARTURE</th>
+	<th>TIME OF ARRIVAL</th>
+	<th>AVERAGE DELAY</th>
+  </tr>
+  <tr>
+    <td>
+			<?php
+				$query = "SELECT * FROM origin ORDER BY price;";
+                $result = mysqli_query($db, $query);
+                while($row = mysqli_fetch_array($result)) {
+                echo $row['name'];}
+			?>
+	</td>
+   
+    <td>
+			<?php
+				$query = "SELECT * FROM origin ORDER BY price;";
+                $result = mysqli_query($db, $query);
+                while($row = mysqli_fetch_array($result)) {
+                echo $row['price'];}
+			?>
+	</td>
+    <td>
+			<?php
+				$query = "SELECT * FROM origin ORDER BY price;";
+                $result = mysqli_query($db, $query);
+                while($row = mysqli_fetch_array($result)) {
+                echo $row['tod'];}
+			?>
+	</td>
+	<td>
+			<?php
+				$query = "SELECT * FROM origin ORDER BY price;";
+                $result = mysqli_query($db, $query);
+                while($row = mysqli_fetch_array($result)) {
+                echo $row['toa'];}
+			?>
+	</td>
+	<td>
+			<?php
+				$query = "SELECT * FROM origin ORDER BY price;";
+                $result = mysqli_query($db, $query);
+                while($row = mysqli_fetch_array($result)) {
+                echo $row['avg_delay'];}
+			?>
+	</td>
+  </tr>
+  
+</table>
+
+</body>
+</html>
